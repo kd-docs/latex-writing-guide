@@ -1,0 +1,107 @@
+\documentclass{article}
+
+\usepackage{sectsty}  % \sectionfont
+\usepackage{titlecaps}  % \titlecap
+\sectionfont{\titlecap}  % capitalize section title
+
+\input{header-preferred}
+\input{header-codelisting}
+
+\usepackage{graphicx} % figures
+\usepackage{hyperref}
+\usepackage{enumitem} % enumerate itemsep
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=cyan,
+  citecolor=blue,
+}
+
+\title{\LaTeX\ Writing Guide}
+\author{Kaidong Hu}
+
+\begin{document}
+\maketitle
+
+
+\section{Start a latex project}
+\subsection{Scaffold}
+Following code is the scaffold of a latex project.
+\begin{minted}{latex}
+  \documentclass{article}
+  \title{\LaTeX\ writing guide}
+  \author{Kaidong Hu}
+
+  \begin{document}
+  \maketitle
+
+  \end{document}
+\end{minted}
+
+\subsection{Vim modeline}
+Put following lines at the end of every tex file will help for a fluent vim 
+editing.
+\begin{minted}{latex}
+% vim:set fo+=wat fo-=l :
+% vim:set fdm=marker fdl=1 fmr=<<<,>>>:
+\end{minted}
+
+\section{Preferred packages}
+\inputminted{latex}{header-preferred.tex}
+
+\section{Including images}
+To include an image, following header package is required:
+\begin{minted}{latex}
+\usepackage{graphicx}
+\end{minted}
+
+and following command is used to include an image
+\begin{minted}{latex}
+\includegraphics[width=\textwidth]{abc.png}
+\end{minted}
+
+\section{Code listings}
+\inputminted{latex}{header-codelisting.tex}
+Here this \href{https://tex.stackexchange.com/questions/452150/
+advanced-customization-of-minted-code}{Stackoverflow solution} shows a pretty 
+demo of highlighted code. Could be researched later.
+\includegraphics[width=\textwidth]{images/tSM9l.png}
+
+\section{Paper citations}
+
+\subsection{Citing with bibtex}
+This is the preferred way when creating a journal or conference paper.
+
+\subsection{Citing with biblatex and biber}
+This is the preferred way to create a personal record. Following code need to 
+put in the header of a latex document
+\begin{minted}{latex}
+  \usepackage[
+    citestyle=alphabetic,
+    bibstyle=alphabetic,
+    sorting=ynt
+  ]{biblatex}
+
+  \addbibresource{main.bib}
+\end{minted}
+and an extra line will be inserted inside the document body
+\begin{minted}{latex}
+\printbibliography
+\end{minted}
+
+Following commands are provided to cite a reference:
+\begin{enumerate}[itemsep=0mm]
+  \item \mintinline{latex}/\cite{*}/
+  \item \mintinline{latex}/\autocite{*}/
+  \item \mintinline{latex}/\textcite{*}/
+  \item \mintinline{latex}/\citeauthor{*}/
+  \item \mintinline{latex}/\citetitle{*}/
+  \item Suffixing a \* after \mintinline{latex}/\cite*{*}/ will make it a 
+    plain-text citation without create links and references.
+\end{enumerate}
+
+
+\end{document}
+
+% vim:set fo+=wat fo-=l :
+% vim:set fdm=marker fdl=1 fmr=<<<,>>>:

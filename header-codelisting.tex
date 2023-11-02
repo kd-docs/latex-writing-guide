@@ -1,0 +1,21 @@
+% Use minted to show code, outputdif should be the same as option 
+% --output-directories passed to latex
+\usepackage[outputdir=build/]{minted}
+\usemintedstyle{github}
+\definecolor{bg}{HTML}{F7F3DD}
+% remove leading spaces for all languages
+\setminted{bgcolor=bg, autogobble}
+% can also write in specific language
+\setminted[latex]{autogobble}
+
+% Show fancy code font, requires xelatex
+\usepackage{fontspec}
+\setmonofont{JetBrainsMono}[
+  Path=./fonts/JetBrainsMono/,
+  Scale=MatchLowercase,
+  Extension = .ttf,
+  UprightFont=*-Regular,
+  BoldFont=*-Bold,
+  ItalicFont=*-Italic,
+  BoldItalicFont=*-BoldItalic
+]
