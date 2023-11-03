@@ -9,6 +9,7 @@
 
 \usepackage{graphicx} % figures
 \usepackage{hyperref}
+\usepackage{csquotes}
 \usepackage{enumitem} % enumerate itemsep
 \hypersetup{
   colorlinks=true,
@@ -100,8 +101,39 @@ Following commands are provided to cite a reference:
     plain-text citation without create links and references.
 \end{enumerate}
 
+\section{hyperref and link colors}
+\begin{minted}{latex}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=cyan,
+  citecolor=blue,
+}
+\end{minted}
+
+\section{paragraph quotation}
+"csquotes" package showing words in following format:
+\begin{displayquote}
+  \begin{centering}
+  \enquote{\it something quoted}
+  \end{centering}
+\end{displayquote}
+\begin{minted}{latex}
+\usepackage{csquotes}
+
+% if bible included
+\usepackage[bable=false]{csquotes}
+
+\begin{displayquote}
+  \begin{centering}
+  \enquote{\it something quoted}
+  \end{centering}
+\end{displayquote}
+\end{minted}
 
 \end{document}
+
 
 % vim:set fo+=wat fo-=l :
 % vim:set fdm=marker fdl=1 fmr=<<<,>>>:
