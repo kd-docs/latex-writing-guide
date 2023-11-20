@@ -7,6 +7,7 @@
 \input{header-preferred}
 \input{header-codelisting}
 
+\usepackage{parskip} % paragraph with have no indent but wider vertical gap
 \usepackage{graphicx} % figures
 \usepackage{hyperref}
 \usepackage{csquotes}
@@ -131,6 +132,16 @@ Following commands are provided to cite a reference:
   \end{centering}
 \end{displayquote}
 \end{minted}
+
+\section{Put float here!}
+
+The first choice is a \mintinline{latex}{\clearpage}. command. It typesets 
+every floats till command issued and put a \mintinline{latex}{\newpage} 
+afterward.
+
+The second choice is \mintinline{latex}{\FloatBarrier} provided by 
+\mintinline{latex}{placeins} package. It flushes all floats without creating a 
+new page.
 
 \end{document}
 
