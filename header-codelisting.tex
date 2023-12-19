@@ -1,12 +1,12 @@
 % Use minted to show code, outputdif should be the same as option 
 % --output-directories passed to latex
 \usepackage[outputdir=build/]{minted}
-\usemintedstyle{github}
-\definecolor{bg}{HTML}{F7F3DD}
+\usemintedstyle{sas}
+%\definecolor{bg}{HTML}{F7F3DD} % \setminted{bgcolor=bg} to change background
 % remove leading spaces for all languages
-\setminted{bgcolor=bg, autogobble}
+\setminted{autogobble}
 % can also write in specific language
-\setminted[latex]{autogobble}
+% \setminted[latex]{autogobble}
 
 % Show fancy code font, requires xelatex
 \usepackage{fontspec}

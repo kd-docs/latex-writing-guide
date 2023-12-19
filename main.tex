@@ -63,7 +63,24 @@ and following command is used to include an image
 \end{minted}
 
 \section{Code listings}
+
+Install \mintinline{bash}{pygments} so latex could use it to highlight codes
+
+\begin{minted}{bash}
+  pipx install pygments
+\end{minted}
+
 \inputminted{latex}{header-codelisting.tex}
+
+In order to use github style, install it using
+
+\begin{minted}{bash}
+  pipx runpip pygments install pygments-style-github
+\end{minted}
+
+
+\section{Code listing alternative}
+
 Here this \href{https://tex.stackexchange.com/questions/452150/
 advanced-customization-of-minted-code}{Stackoverflow solution} shows a pretty 
 demo of highlighted code. Could be researched later.
