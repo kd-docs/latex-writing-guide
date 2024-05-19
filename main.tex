@@ -119,6 +119,19 @@ Following commands are provided to cite a reference:
     plain-text citation without create links and references.
 \end{enumerate}
 
+\subsection{Biblographies per chapter}
+By setting \mintinline{latex}{[refsection=chapter]} command in biblatex,
+Following declarasion can be set in document permeable part to make bibliography consists with other part of chapter.  
+Using
+\begin{minted}{latex}
+\DeclarePrintbibliographyDefaults{
+  heading=subbibintoc,
+  title=See also:
+}
+\end{minted}
+
+One can add citation in each chapter and put \mintinline{latex}{\printbibliography} at the end of each chapter.
+
 \section{hyperref and link colors}
 \begin{minted}{latex}
 \usepackage{hyperref}
