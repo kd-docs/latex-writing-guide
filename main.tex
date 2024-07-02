@@ -163,6 +163,16 @@ One can add citation in each chapter and put \mintinline{latex}{\printbibliograp
 \end{displayquote}
 \end{minted}
 
+\section{Add attachments to pdf}
+
+You will need to include package \mintinline{latex}{attachfile2} to put package in compiled pdf.
+To include a file using relative path to the project root
+
+\begin{minted}{latex}
+  \textattachfile{attachments/path}{\textcolor{blue}{open}} % with a open link to show the file
+\end{minted}
+
+
 \section{Put float here!}
 
 The first choice is a \mintinline{latex}{\clearpage}. command. It typesets 
